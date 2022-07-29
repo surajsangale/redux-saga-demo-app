@@ -1,5 +1,5 @@
-import { ADD_TO_CART, EMPTY_CART } from "./constant"
-import { REMOVE_FROM_CART } from "./constant";
+import { ADD_TO_CART, EMPTY_CART } from "../constant"
+import { REMOVE_FROM_CART } from "../constant";
 
 export const cartData = (product = [], action) => {
     // console.log('Reduser called sucsessfully', action)
@@ -12,7 +12,7 @@ export const cartData = (product = [], action) => {
     //     return "No Action Matched "
     // }
     switch (action.type) {
-        case ADD_TO_CART:
+        case ADD_TO_CART:   // from action type is called and send here and perform the logic which is defined
             // add cart logic 
             console.log('ADD_TO_CART Condition', action)
             //  console.warn(product.length)

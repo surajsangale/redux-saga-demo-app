@@ -1,9 +1,9 @@
 import React from 'react';
 import '../App.css';
 
-import { AddToCart, RemoveFromCart, EmptyCart } from '../redux/action';
+import { AddToCart, RemoveFromCart, EmptyCart } from '../Redux/action';
 import { useDispatch } from 'react-redux';
-import { ProductList } from '../redux/ProductAction';
+import { ProductList } from '../Redux/ProductAction';
 import { useSelector } from 'react-redux/es/exports';
 
 function Main() {
@@ -17,6 +17,7 @@ function Main() {
         price: 10
 
     }
+    const result = useSelector(state => state.cartData)
 
 
     return (
@@ -38,13 +39,19 @@ function Main() {
                 <button onClick={() => dispatch(ProductList())}>Get Product List</button>
             </div>
             <div className="productContainer">
-                <p>Name:- {process.env.REACT_APP_NAME}</p>
-                {/* { 
-                data.map((item)=><div `key={data.id}`  className='proctItem'>
+                {/* <p>Name:- {process.env.REACT_APP_NAME}</p>
+                <p>NO:- {process.env.REACT_APP_MOB_NO}</p> */}
+                { 
+                result.map((item)=><div className='proctItem'>
+                    <img src={item.photo} alt="" />
                     <div>Name:-{data.name}</div>
                 </div>
-                )} */}
+                )}
             </div>
+        <div className="data">
+            <p></p>
+        </div>
+
 
         </>
 

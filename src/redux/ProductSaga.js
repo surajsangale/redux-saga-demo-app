@@ -3,9 +3,10 @@ import { PRODUCT_LIST, SET_PRODUCT_LIST } from './constant';
 import { put } from 'redux-saga/effects';
 
 
-function* getProducts() {
+ export function* getProducts() {
     // let data = yield fetch('https://jsonplaceholder.typicode.com/users')  //contact API call here
-    let apiData = yield fetch(`https://api.openweathermap.org/data/2.5/weather?q=mumbai&units=metric&appid=${process.env.REACT_APP_API_KEY}`)  //weather API call here
+    // let apiData = yield fetch(`https://api.openweathermap.org/data/2.5/weather?q=mumbai&units=metric&appid=${process.env.REACT_APP_API_KEY}`)  //weather API call here
+    let apiData = yield fetch('http://localhost:3500/product')
     apiData = yield apiData.json()
     // console.log("ProductList Action sucsessfully called : ",data)
     console.warn(apiData)
